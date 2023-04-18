@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
+  border-radius: 25px;
 }
 
 .App-logo {
@@ -8,10 +13,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (min-width: 1120px) {
 }
 
 .App-header {
@@ -51,7 +53,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-content: left;
+  align-content: center;
   max-width: 20em;
   max-height: 25em;
   margin: 5px;
@@ -76,4 +78,38 @@
 #votesCount {
   justify-content: right;
   border: 2px solid blue;
+}
+
+.fullReviewDetails {
+  display: flex;
+}
+.LHSReviewDetails {
+  max-width: 50%;
+  /* border: 3px solid fuchsia; */
+  object-fit: contain;
+}
+
+#postedDate {
+  font-size: 75%;
+  font-style: normal;
+}
+.RHSReviewDetails {
+  max-width: 50%;
+  align-content: right;
+  margin: 5px;
+  position: relative;
+  /* border: 3px solid green; */
+}
+
+#voting {
+  position: inherit;
+  bottom: 0%;
+}
+#reviewBody {
+  font-size: 20px;
+  font-weight: 25;
+  font-style: italic;
+}
+.commentsSection {
+  border: 3px solid purple;
 }
