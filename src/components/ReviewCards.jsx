@@ -10,10 +10,8 @@ const ReviewCards = ({ review }) => {
         className="cardImage"
       />
       <section>
-        <h4 className="reviewTitle">
-          {review.title}
-          <h5>By: {review.owner}</h5>
-        </h4>
+        <h4 className="reviewTitle">{review.title}</h4>
+        <h5>By: {review.owner}</h5>
         <h5 id="votesCount">
           <span>
             votes: {review.votes}{" "}

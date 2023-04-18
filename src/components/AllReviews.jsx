@@ -6,12 +6,12 @@ const AllReviews = ({ reviews, setReviews }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getAllReviews().then((response) => {
-      setIsLoading(true);
-      setReviews(response.data.reviews);
+    setIsLoading(true);
+    getAllReviews().then((reviews) => {
+      setReviews(reviews);
       setIsLoading(false);
     });
-  });
+  }, []);
 
   if (isLoading) {
     return <h4 id="loadingMessage">Reviews Loading...</h4>;

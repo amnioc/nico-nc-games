@@ -3,7 +3,7 @@ const CategoryMenu = () => {
     <>
       <label htmlFor="games category filter">Go to:</label>
       <select>
-        <option value={""} disabled selected hidden>
+        <option disabled defaultValue={""} hidden>
           Categories
         </option>
         <option></option>

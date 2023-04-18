@@ -4,7 +4,7 @@ const SortReviews = () => {
       <section id="filtersSortBy">
         <label htmlFor="sort by filter">Sort Reviews By: </label>
         <select id="sortByDropDown">
-          <option value="" disabled selected hidden>
+          <option disabled defaultValue={""} hidden>
             Choose One...
           </option>
           <option value=""></option>
