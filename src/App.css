@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 18px;
 }
 
 .App-logo {
@@ -24,10 +25,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +32,48 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#Header {
+  text-decoration: none;
+  color: black;
+}
+
+#loadingMessage {
+  justify-items: center;
+}
+
+#filtersSortBy {
+  margin: 20px;
+}
+.reviewCard {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: left;
+  max-width: 20em;
+  max-height: 25em;
+  margin: 5px;
+  /* border: 1.5px solid black; */
+}
+
+.reviewTitle {
+  text-align: left;
+}
+
+.cardImage {
+  flex-grow: 2;
+  height: 250px;
+  width: 20em;
+  object-fit: cover;
+}
+
+#reviewDate {
+  text-align: left;
+}
+
+#votesCount {
+  justify-content: right;
+  border: 2px solid blue;
 }
