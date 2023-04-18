@@ -50,7 +50,8 @@
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-content: left;
   max-width: 20em;
   max-height: 25em;
   margin: 5px;
