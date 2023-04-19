@@ -43,12 +43,15 @@ img {
 #filtersSortBy {
   margin: 20px;
 }
-.reviewCard {
+
+/* ALL REVIEWS COMPONENT*/
+
+.review-card {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
   max-width: 20em;
   max-height: 25em;
   margin: 5px;
@@ -56,25 +59,31 @@ img {
   /* border: 1.5px solid black; */
 }
 
-.reviewTitle {
+.review-card-details {
   text-align: left;
 }
 
-.cardImage {
-  flex-grow: 2;
+.review-card-title {
+}
+
+.review-card-image {
   height: 250px;
   width: 20em;
   object-fit: cover;
 }
 
-#reviewDate {
-  text-align: left;
+.review-card-date {
 }
 
-#votesCount {
+.review-card-votes {
   justify-content: right;
-  border: 2px solid blue;
+  margin-left: 20px;
+  /* border: 2px solid blue; */
 }
+
+/* END OF ALL REVIEWS COMPONENT*/
+
+/* SINGLE REVIEW VIEW COMPONENT*/
 
 .fullReviewDetails {
   display: flex;
@@ -106,6 +115,11 @@ img {
   font-weight: 25;
   font-style: italic;
 }
+
+/* END OF SINGLE REVIEW */
+
+/* comments section */
+
 .commentsSection {
   border: 3px solid purple;
 }
@@ -153,3 +167,5 @@ img {
 #comment-text {
   font-size: 20px;
 }
+
+/* END OF comments section */

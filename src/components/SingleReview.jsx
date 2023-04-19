@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { fetchReviewByID } from "../utils/api";
 import CommentsSection from "./CommentsSection";
+import ReviewVotingButton from "./VotingButton";
 
 const SingleReview = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,12 +42,7 @@ const SingleReview = () => {
             <summary>Did You Know?</summary>
             <h4>{thisReview.designer} designed this game</h4>
           </details>
-          <span id="voting">
-            Agree with {thisReview.owner}? Add your vote:{" "}
-            <button role="img" aria-label="add a vote">
-              🌈
-            </button>
-          </span>
+          <ReviewVotingButton review={thisReview} setReview={setThisReview} />
         </div>
       </section>
       <CommentsSection review_id={thisReview.review_id} />
