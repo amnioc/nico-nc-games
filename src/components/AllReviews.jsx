@@ -1,5 +1,5 @@
 import ReviewCards from "./ReviewCards";
-import { getAllReviews } from "../api";
+import { getAllReviews } from "../utils/api";
 import { useEffect, useState } from "react";
 
 const AllReviews = ({ reviews, setReviews }) => {

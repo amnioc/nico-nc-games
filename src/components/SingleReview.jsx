@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { fetchReviewByID } from "../api";
+import { fetchReviewByID } from "../utils/api";
 import CommentsSection from "./CommentsSection";
 
 const SingleReview = () => {

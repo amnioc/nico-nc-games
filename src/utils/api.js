@@ -20,7 +20,7 @@ export const fetchReviewByID = (review_id) => {
     });
 };
 
-export const getReviewComments = (review_id) => {
+export const getReviewCommentsById = (review_id) => {
   return axios
     .get(
       `https://nicos-nc-games.onrender.com/api/reviews/${review_id}/comments`

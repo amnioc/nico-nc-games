@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
-import { getReviewComments } from "../api";
+import { getReviewComments, getReviewCommentsById } from "../utils/api";
 import NewComment from "./NewComment";
 
 const CommentsSection = ({ review_id }) => {
@@ -9,7 +9,7 @@ const CommentsSection = ({ review_id }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getReviewComments(review_id).then((comments) => {
+    getReviewCommentsById(review_id).then((comments) => {
       setIsLoading(false);
       setCurrentComments(comments);
     });
