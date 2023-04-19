@@ -49,7 +49,7 @@ const SingleReview = () => {
           </span>
         </div>
       </section>
-      <CommentsSection />
+      <CommentsSection review_id={thisReview.review_id} />
     </>
   );
 };

@@ -3,7 +3,6 @@ import SingleReviewPage from "../views/SingleReviewPage";
 
 const ReviewCards = ({ review }) => {
   const datePosted = new Date(review.created_at).toDateString();
-  //   const timePosted = new Date(review.created_at).toTimeString();
 
   const handleReviewClick = (event) => {
     return <SingleReviewPage />;
@@ -20,8 +19,11 @@ const ReviewCards = ({ review }) => {
 
         <h4 className="reviewTitle">{review.title}</h4>
       </Link>
-      <section>
+      <section className="review-card-details">
         <h5>By: {review.owner}</h5>
+        <h5 id="reviewDate">
+          {datePosted} • {review.category} • {review.comment_count} comments
+        </h5>
         <h5 id="votesCount">
           <span>
             votes: {review.votes}{" "}
@@ -29,10 +31,6 @@ const ReviewCards = ({ review }) => {
               🌈
             </span>
           </span>
-        </h5>
-
-        <h5 id="reviewDate">
-          {datePosted} || {review.category}
         </h5>
       </section>
     </li>
