@@ -19,3 +19,13 @@ export const fetchReviewByID = (review_id) => {
       return response.data.review;
     });
 };
+
+export const getReviewCommentsById = (review_id) => {
+  return axios
+    .get(
+      `https://nicos-nc-games.onrender.com/api/reviews/${review_id}/comments`
+    )
+    .then((response) => {
+      return response.data.reviewComments;
+    });
+};

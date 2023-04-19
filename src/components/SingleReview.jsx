@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { fetchReviewByID } from "../api";
+import { fetchReviewByID } from "../utils/api";
 import CommentsSection from "./CommentsSection";
 
 const SingleReview = () => {
@@ -49,7 +49,7 @@ const SingleReview = () => {
           </span>
         </div>
       </section>
-      <CommentsSection />
+      <CommentsSection review_id={thisReview.review_id} />
     </>
   );
 };

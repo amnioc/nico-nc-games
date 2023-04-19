@@ -8,11 +8,6 @@ img {
   border-radius: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (min-width: 1120px) {
 }
 
@@ -57,6 +52,7 @@ img {
   max-width: 20em;
   max-height: 25em;
   margin: 5px;
+  text-align: left;
   /* border: 1.5px solid black; */
 }
 
@@ -112,4 +108,48 @@ img {
 }
 .commentsSection {
   border: 3px solid purple;
+}
+
+#comment-section-heading {
+  text-align: left;
+  border-bottom: 3px solid purple;
+}
+.commentCard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 3px solid red;
+  list-style-type: none;
+}
+
+.comment-details {
+  text-align: center;
+  margin-left: 25px;
+  display: grid;
+  align-items: center;
+  align-content: space-evenly;
+  grid-template-columns: 1fr 1fr;
+}
+
+#comment-date {
+  grid-column: 1/-1;
+}
+
+.profile-pic {
+  width: 100%;
+  grid-column: 1/2;
+  object-fit: contain;
+}
+
+.comment-body {
+  text-align: left;
+  display: grid;
+  align-content: space-evenly;
+
+  grid-template-rows: 2fr 1fr;
+  margin: 25px;
+  margin-top: 0px;
+}
+
+#comment-text {
+  font-size: 20px;
 }
