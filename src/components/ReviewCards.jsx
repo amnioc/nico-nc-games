@@ -23,9 +23,9 @@ const ReviewCards = ({ review }) => {
         <h5>
           By: {review.owner}
           <span className="review-card-votes">
-            <span aria-label="rainbow vote symbol">🌈</span>
+            <span aria-label="rainbow symbol">🌈</span>
             {review.votes} votes
-            <span aria-label="rainbow vote symbol">🌈</span>
+            <span aria-label="rainbow symbol">🌈</span>
           </span>
         </h5>
         <h5 className="review-card-date">

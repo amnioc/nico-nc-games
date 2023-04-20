@@ -39,3 +39,14 @@ export const patchReviewVotes = (review_id) => {
       return response.data.review.votes;
     });
 };
+
+export const postNewComment = (review_id, newComment) => {
+  return axios
+    .post(
+      `https://nicos-nc-games.onrender.com/api/reviews/${review_id}/comments`,
+      newComment
+    )
+    .then(({ data }) => {
+      return data.comment;
+    });
+};
