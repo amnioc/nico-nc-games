@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
-import { getReviewComments, getReviewCommentsById } from "../utils/api";
+import { getReviewCommentsById } from "../utils/api";
 import NewComment from "./NewComment";
 
 const CommentsSection = ({ review_id }) => {

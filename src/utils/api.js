@@ -29,3 +29,13 @@ export const getReviewCommentsById = (review_id) => {
       return response.data.reviewComments;
     });
 };
+
+export const patchReviewVotes = (review_id) => {
+  return axios
+    .patch(`https://nicos-nc-games.onrender.com/api/reviews/${review_id}`, {
+      inc_votes: 1,
+    })
+    .then((response) => {
+      return response.data.review.votes;
+    });
+};

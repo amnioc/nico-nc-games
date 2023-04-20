@@ -8,9 +8,6 @@ img {
   border-radius: 25px;
 }
 
-@media (min-width: 1120px) {
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -43,12 +40,15 @@ img {
 #filtersSortBy {
   margin: 20px;
 }
-.reviewCard {
+
+/* ALL REVIEWS COMPONENT*/
+
+.review-card {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
   max-width: 20em;
   max-height: 25em;
   margin: 5px;
@@ -56,58 +56,90 @@ img {
   /* border: 1.5px solid black; */
 }
 
-.reviewTitle {
+.review-card-details {
   text-align: left;
 }
 
-.cardImage {
-  flex-grow: 2;
+.review-card-title {
+}
+
+.review-card-image {
   height: 250px;
   width: 20em;
   object-fit: cover;
 }
 
-#reviewDate {
-  text-align: left;
+.review-card-date {
 }
 
-#votesCount {
+.review-card-votes {
   justify-content: right;
-  border: 2px solid blue;
+  margin-left: 20px;
+  /* border: 2px solid blue; */
 }
+
+/* END OF ALL REVIEWS COMPONENT*/
+
+/* SINGLE REVIEW VIEW COMPONENT*/
 
 .fullReviewDetails {
   display: flex;
+  border: 3px solid green;
+  align-content: stretch;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
-.LHSReviewDetails {
+
+.review-overview {
   max-width: 50%;
   /* border: 3px solid fuchsia; */
-  object-fit: contain;
+  flex: 3;
 }
 
 #postedDate {
   font-size: 75%;
   font-style: normal;
 }
-.RHSReviewDetails {
+
+.review-full-details {
   max-width: 50%;
-  align-content: right;
   margin: 5px;
-  position: relative;
-  /* border: 3px solid green; */
 }
 
-#voting {
-  position: inherit;
-  bottom: 0%;
+.review-voting {
+  align-self: flex-start;
+  padding: 10px;
+}
+
+#voting-button {
+  font-size: 25px;
 }
 #reviewBody {
   font-size: 20px;
   font-weight: 25;
   font-style: italic;
 }
+@media (min-width: 784px) {
+  .fullReviewDetails {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat (2, 1fr);
+  }
+
+  .review-voting {
+    grid-column: 2/-1;
+  }
+}
+
+/* END OF SINGLE REVIEW */
+
+/* comments section */
+
 .commentsSection {
   border: 3px solid purple;
+  display: inline-block;
 }
 
 #comment-section-heading {
@@ -123,10 +155,13 @@ img {
 
 .comment-details {
   text-align: center;
+  grid-column: 1/-1;
   margin-left: 25px;
   display: grid;
   align-items: center;
   align-content: space-evenly;
+
+  justify-items: center;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -142,9 +177,9 @@ img {
 
 .comment-body {
   text-align: left;
-  display: grid;
+  /* display: grid; */
   align-content: space-evenly;
-
+  grid-column: 1/3;
   grid-template-rows: 2fr 1fr;
   margin: 25px;
   margin-top: 0px;
@@ -153,3 +188,5 @@ img {
 #comment-text {
   font-size: 20px;
 }
+
+/* END OF comments section */
