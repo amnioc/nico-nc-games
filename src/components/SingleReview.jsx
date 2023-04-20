@@ -24,27 +24,30 @@ const SingleReview = () => {
   return (
     <>
       <h2>{thisReview.title}</h2>
-      <section className="fullReviewDetails">
-        <div className="LHSReviewDetails">
+      <article className="fullReviewDetails">
+        <section className="review-overview">
           <img
-            alt={`related to ${thisReview.title}`}
+            alt={`gameplay for ${thisReview.title}`}
             src={thisReview.review_img_url}
           />
           <h3>Written By: {thisReview.owner}</h3>
           <h4>Review Votes: {thisReview.votes}</h4>
-          <h4 id="postedDate">
-            Posted on: {new Date(thisReview.created_at).toString()}
-          </h4>
-        </div>
-        <div className="RHSReviewDetails">
+          <time id="postedDate">
+            Posted: {new Date(thisReview.created_at).toString()}
+          </time>
+        </section>
+        <section className="review-full-details">
           <h4 id="reviewBody">"{thisReview.review_body}"</h4>
           <details>
             <summary>Did You Know?</summary>
             <h4>{thisReview.designer} designed this game</h4>
           </details>
+        </section>
+        <section className="review-voting">
           <ReviewVotingButton review={thisReview} setReview={setThisReview} />
-        </div>
-      </section>
+        </section>
+      </article>
+
       <CommentsSection review_id={thisReview.review_id} />
     </>
   );

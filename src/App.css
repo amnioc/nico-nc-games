@@ -8,9 +8,6 @@ img {
   border-radius: 25px;
 }
 
-@media (min-width: 1120px) {
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -87,33 +84,53 @@ img {
 
 .fullReviewDetails {
   display: flex;
+  border: 3px solid green;
+  align-content: stretch;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
-.LHSReviewDetails {
+
+.review-overview {
   max-width: 50%;
   /* border: 3px solid fuchsia; */
-  object-fit: contain;
+  flex: 3;
 }
 
 #postedDate {
   font-size: 75%;
   font-style: normal;
 }
-.RHSReviewDetails {
+
+.review-full-details {
   max-width: 50%;
-  align-content: right;
   margin: 5px;
-  position: relative;
-  /* border: 3px solid green; */
 }
 
-#voting {
-  position: inherit;
-  bottom: 0%;
+.review-voting {
+  align-self: flex-start;
+  padding: 10px;
+}
+
+#voting-button {
+  font-size: 25px;
 }
 #reviewBody {
   font-size: 20px;
   font-weight: 25;
   font-style: italic;
+}
+@media (min-width: 784px) {
+  .fullReviewDetails {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat (2, 1fr);
+  }
+
+  .review-voting {
+    grid-column: 2/-1;
+  }
 }
 
 /* END OF SINGLE REVIEW */
@@ -122,6 +139,7 @@ img {
 
 .commentsSection {
   border: 3px solid purple;
+  display: inline-block;
 }
 
 #comment-section-heading {
@@ -137,10 +155,13 @@ img {
 
 .comment-details {
   text-align: center;
+  grid-column: 1/-1;
   margin-left: 25px;
   display: grid;
   align-items: center;
   align-content: space-evenly;
+
+  justify-items: center;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -156,9 +177,9 @@ img {
 
 .comment-body {
   text-align: left;
-  display: grid;
+  /* display: grid; */
   align-content: space-evenly;
-
+  grid-column: 1/3;
   grid-template-rows: 2fr 1fr;
   margin: 25px;
   margin-top: 0px;
