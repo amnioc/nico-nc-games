@@ -7,8 +7,8 @@ const ReviewVotingButton = ({ review, setReview }) => {
 
   const handleVoteClick = (event) => {
     setReview((review) => {
-      event.currentTarget.disabled = true;
       setErr(null);
+      event.currentTarget.disabled = true;
       return { ...review, votes: review.votes + 1 };
     });
 
@@ -17,8 +17,10 @@ const ReviewVotingButton = ({ review, setReview }) => {
         setReviewVotes(votes);
       })
       .catch((err) => {
-        setErr("Oops! Something went wrong, please try again.");
-        return { ...review, votes: review.votes - 1 };
+        setErr("Oops! Something went wrong, please try again later.");
+        setReview((review) => {
+          return { ...review, votes: review.votes - 1 };
+        });
       });
   };
 
