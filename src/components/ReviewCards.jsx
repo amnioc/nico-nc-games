@@ -10,6 +10,9 @@ const ReviewCards = ({ review }) => {
 
   return (
     <li className="review-card">
+      <h5 className="review-card-date">
+        {datePosted} • {review.category} • {review.comment_count} comments
+      </h5>
       <Link to={`/reviews/${review.review_id}`} onClick={handleReviewClick}>
         <img
           src={review.review_img_url}
@@ -28,9 +31,9 @@ const ReviewCards = ({ review }) => {
             <span aria-label="rainbow symbol">🌈</span>
           </span>
         </h5>
-        <h5 className="review-card-date">
+        {/* <h5 className="review-card-date">
           {datePosted} • {review.category} • {review.comment_count} comments
-        </h5>
+        </h5> */}
       </section>
     </li>
   );

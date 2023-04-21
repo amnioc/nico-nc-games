@@ -41,12 +41,24 @@ img {
   margin: 20px;
 }
 
+.category-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.category-option {
+  border: 3px solid blue;
+  padding: 8px;
+  display: inline;
+}
 /* ALL REVIEWS COMPONENT*/
 
 .review-card {
   display: inline-flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: flex-start;
   max-width: 20em;
@@ -70,12 +82,13 @@ img {
 }
 
 .review-card-date {
+  display: block;
 }
 
 .review-card-votes {
   justify-content: right;
   margin-left: 20px;
-  /* border: 2px solid blue; */
+  align-self: flex-start; /* border: 2px solid blue; */
 }
 
 /* END OF ALL REVIEWS COMPONENT*/

@@ -5,8 +5,8 @@ import SortReviews from "../components/SortReviews";
 const Home = ({ reviews, setReviews }) => {
   return (
     <div>
-      <SortReviews setReviews={setReviews} />
       <CategoryMenu setReviews={setReviews} />
+      <SortReviews setReviews={setReviews} />
       <AllReviews reviews={reviews} setReviews={setReviews} />
     </div>
   );
