@@ -1,17 +1,36 @@
+import { useEffect, useState } from "react";
+import { getCategoryNames } from "../utils/api";
+import CategoryNavCards from "./CategoryNavCards";
+
 const CategoryMenu = () => {
-  //future ticket, will pull from api
+  const [categories, setCategories] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getCategoryNames().then((categories) => {
+      setCategories(categories);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return <h4 id="loadingMessage">Category Menu Loading...</h4>;
+  }
+
   return (
-    <nav>
-      <label htmlFor="games category filter">Pick A Category:</label>
-      <ol className="category-nav">
-        <li className="category-option">Strategy</li>
-        <li className="category-option">Hidden-roles</li>
-        <li className="category-option">Dexterity</li>
-        <li className="category-option">Push-your-luck</li>
-        <li className="category-option">Roll-and-write</li>
-        <li className="category-option">Deck-building</li>
-        <li className="category-option">Engine-building</li>
-      </ol>
+    <nav className="category-nav">
+      {categories.map((category) => {
+        return (
+          <ol class="categories-list">
+            <CategoryNavCards
+              key={category.slug}
+              category={category}
+              className="category-cards"
+            />
+          </ol>
+        );
+      })}
     </nav>
   );
 };

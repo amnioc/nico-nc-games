@@ -1,17 +1,19 @@
 import ReviewCards from "./ReviewCards";
 import { getAllReviews } from "../utils/api";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CategoryContext } from "../contexts/CategoryMenu";
 
 const AllReviews = ({ reviews, setReviews }) => {
+  const { categoryChosen, setCategoryChosen } = useContext(CategoryContext);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
-    getAllReviews().then((reviews) => {
+    getAllReviews(categoryChosen).then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-  }, []);
+  }, [categoryChosen]);
 
   if (isLoading) {
     return <h4 id="loadingMessage">Reviews Loading...</h4>;
