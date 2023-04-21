@@ -1,4 +1,5 @@
 const CategoryMenu = () => {
+  //future ticket, will pull from api
   return (
     <nav>
       <label htmlFor="games category filter">Pick A Category:</label>

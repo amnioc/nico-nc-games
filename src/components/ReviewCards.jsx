@@ -31,9 +31,6 @@ const ReviewCards = ({ review }) => {
             <span aria-label="rainbow symbol">🌈</span>
           </span>
         </h5>
-        {/* <h5 className="review-card-date">
-          {datePosted} • {review.category} • {review.comment_count} comments
-        </h5> */}
       </section>
     </li>
   );

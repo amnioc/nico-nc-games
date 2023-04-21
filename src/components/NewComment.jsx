@@ -10,6 +10,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
   const [err, setErr] = useState(null);
 
   const handleNewComment = (event) => {
+    const thisForm = document.getElementById("form");
     setIsPosting(true);
     event.preventDefault();
     const thisComment = {
@@ -27,6 +28,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
         setCommentBody("");
       })
       .catch((err) => {
+        setIsPosting(false);
         setErr("Oops! Something went wrong, please try again later.");
       });
   };
@@ -36,7 +38,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
   }
 
   return (
-    <form onSubmit={handleNewComment} className="new-comment-form">
+    <form onSubmit={handleNewComment} className="new-comment-form" id="form">
       <label id="form-username-field">
         Username:
         <input

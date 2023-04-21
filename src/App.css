@@ -88,7 +88,8 @@ img {
 .review-card-votes {
   justify-content: right;
   margin-left: 20px;
-  align-self: flex-start; /* border: 2px solid blue; */
+  align-self: flex-start;
+  /* border: 2px solid blue; */
 }
 
 /* END OF ALL REVIEWS COMPONENT*/

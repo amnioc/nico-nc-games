@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const CommentVotingButton = ({ comment, setCommentVotes, commentVotes }) => {
-  //   const [thisComment, setThisComment] = useState(comment);
   const [err, setErr] = useState(null);
   const handleCommentVoteClick = (event) => {
     setErr(null);
@@ -9,11 +8,6 @@ const CommentVotingButton = ({ comment, setCommentVotes, commentVotes }) => {
     event.currentTarget.disabled = true;
     setCommentVotes((comment) => {
       return { ...comment, votes: comment.votes + 1 };
-      // }).catch((err) => {
-      //   setErr("Oops! Something went wrong, please try again later.");
-      //   setThisComment((comment) => {
-      //     return { ...comment, votes: comment.votes - 1 };
-      //   });
     });
   };
 
