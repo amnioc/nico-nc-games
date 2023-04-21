@@ -4,7 +4,15 @@ import axios from "axios";
 //   baseURL: "https://nicos-nc-games.onrender.com/api/reviews",
 // });
 
-export const getAllReviews = (category_name) => {
+export const getAllReviews = () => {
+  return axios
+    .get(`https://nicos-nc-games.onrender.com/api/reviews`)
+    .then((response) => {
+      return response.data.reviews;
+    });
+};
+
+export const getAllReviewsByCategory = (category_name) => {
   return axios
     .get(
       `https://nicos-nc-games.onrender.com/api/reviews?category=${category_name}`

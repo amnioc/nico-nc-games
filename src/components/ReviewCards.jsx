@@ -11,7 +11,8 @@ const ReviewCards = ({ review }) => {
   return (
     <li className="review-card">
       <h5 className="review-card-date">
-        {datePosted} • {review.category} • {review.comment_count} comments
+        {datePosted} • {review.category.replaceAll("-", " ")} •{" "}
+        {review.comment_count} comments
       </h5>
       <Link to={`/reviews/${review.review_id}`} onClick={handleReviewClick}>
         <img

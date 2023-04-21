@@ -19,19 +19,22 @@ const CategoryMenu = () => {
   }
 
   return (
-    <nav className="category-nav">
-      {categories.map((category) => {
-        return (
-          <ol className="categories-list">
-            <CategoryNavCards
-              key={category.slug}
-              category={category}
-              className="category-cards"
-            />
-          </ol>
-        );
-      })}
-    </nav>
+    <label>
+      {" "}
+      Pick Your Category:
+      <nav className="category-nav">
+        {categories.map((category) => {
+          return (
+            <ol className="categories-list" key={category.slug}>
+              <CategoryNavCards
+                category={category}
+                className="category-cards"
+              />
+            </ol>
+          );
+        })}
+      </nav>
+    </label>
   );
 };
 export default CategoryMenu;
