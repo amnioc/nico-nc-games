@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { fetchReviewByID } from "../utils/api";
 import CommentsSection from "./CommentsSection";
-import ReviewVotingButton from "./VotingButton";
+import ReviewVotingButton from "./ReviewVotingButton";
 
 const SingleReview = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,18 +1,17 @@
 const SortReviews = () => {
   return (
     <>
-      <section id="filtersSortBy">
-        <label htmlFor="sort by filter">Sort Reviews By: </label>
-        <select id="sortByDropDown">
-          <option disabled defaultValue={""} hidden>
-            Choose One...
-          </option>
-          <option value=""></option>
-          <option>to</option>
-          <option>be</option>
-          <option>updated</option>
-        </select>
-      </section>
+      <nav id="sort-by">
+        <label htmlFor="sort by filter">
+          Sort Reviews By:
+          <select id="sortByDropDown" placeholder="Choose One...">
+            <option value={""}></option>
+            <option>to</option>
+            <option>be</option>
+            <option>updated</option>
+          </select>
+        </label>
+      </nav>
     </>
   );
 };

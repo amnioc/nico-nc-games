@@ -11,9 +11,6 @@ const AllReviews = ({ reviews, setReviews }) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-    // .catch((err) => {
-    //   return <h4>there was an error</h4>;
-    // });
   }, []);
 
   if (isLoading) {

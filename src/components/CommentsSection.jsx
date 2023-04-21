@@ -23,7 +23,11 @@ const CommentsSection = ({ review_id }) => {
     <>
       <section className="commentsSection">
         <h3 id="comment-section-heading">Comments...</h3>
-        <NewComment />
+        <NewComment
+          review_id={review_id}
+          setCurrentComments={setCurrentComments}
+          currentComments={currentComments}
+        />
         <ul id="commentsList">
           {currentComments.map((comment) => {
             return <CommentCard key={comment.comment_id} comment={comment} />;
