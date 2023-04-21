@@ -22,7 +22,7 @@ const CategoryMenu = () => {
     <nav className="category-nav">
       {categories.map((category) => {
         return (
-          <ol class="categories-list">
+          <ol className="categories-list">
             <CategoryNavCards
               key={category.slug}
               category={category}
