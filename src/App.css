@@ -44,14 +44,23 @@ img {
 .category-nav {
   list-style: none;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
 
+.categories-list {
+}
+
+.category-cards {
+  display: flex;
+}
+
 .category-option {
   border: 3px solid blue;
+
   padding: 8px;
-  display: inline;
+  display: flex;
 }
 /* ALL REVIEWS COMPONENT*/
 
