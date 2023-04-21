@@ -6,7 +6,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
   const [commentBody, setCommentBody] = useState("");
   const [isPosting, setIsPosting] = useState(false);
   const [commentPosted, setCommentPosted] = useState(false);
-  const [deactivateForm, setDeactivateForm] = useState(false);
+  // const [deactivateForm, setDeactivateForm] = useState(false);
   const [err, setErr] = useState(null);
 
   const handleNewComment = (event) => {
@@ -21,7 +21,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
       .then((comment) => {
         setCurrentComments([comment, ...currentComments]);
         setIsPosting(false);
-        setDeactivateForm(true);
+        // setDeactivateForm(true);
         setCommentPosted(true);
         setUsername(""); //clear form
         setCommentBody("");
@@ -48,7 +48,7 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-          disabled={deactivateForm}
+          // disabled={deactivateForm}
           autoComplete="username"
         />
       </label>
@@ -63,10 +63,10 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
             setCommentBody(event.target.value);
           }}
           placeholder="this review is..."
-          disabled={deactivateForm}
+          // disabled={deactivateForm}
         />
       </label>
-      <button type="submit" disabled={deactivateForm} id="form-button">
+      <button type="submit" id="form-button">
         Post Comment
       </button>
       <aside>{err ? <p>{err}</p> : null}</aside>

@@ -6,7 +6,17 @@ import axios from "axios";
 
 export const getAllReviews = () => {
   return axios
-    .get("https://nicos-nc-games.onrender.com/api/reviews")
+    .get(`https://nicos-nc-games.onrender.com/api/reviews`)
+    .then((response) => {
+      return response.data.reviews;
+    });
+};
+
+export const getAllReviewsByCategory = (category_name) => {
+  return axios
+    .get(
+      `https://nicos-nc-games.onrender.com/api/reviews?category=${category_name}`
+    )
     .then((response) => {
       return response.data.reviews;
     });
@@ -48,5 +58,13 @@ export const postNewComment = (review_id, newComment) => {
     )
     .then(({ data }) => {
       return data.comment;
+    });
+};
+
+export const getCategoryNames = () => {
+  return axios
+    .get("https://nicos-nc-games.onrender.com/api/categories")
+    .then(({ data }) => {
+      return data.categories;
     });
 };

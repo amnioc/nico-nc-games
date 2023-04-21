@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 import Home from "./views/Home.jsx";
 import { useState } from "react";
 import SingleReview from "./views/SingleReviewPage";
+import CategoryPage from "./components/Categories/CategoryPage";
 
 function App() {
   const [reviews, setReviews] = useState("");
@@ -23,6 +24,10 @@ function App() {
         <Route
           path="/reviews/:review_id"
           element={<SingleReview reviews={reviews} />}
+        />
+        <Route
+          path="/games/:category"
+          element={<CategoryPage reviews={reviews} setReviews={setReviews} />}
         />
       </Routes>
     </div>
