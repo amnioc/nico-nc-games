@@ -10,7 +10,6 @@ const NewComment = ({ review_id, currentComments, setCurrentComments }) => {
   const [err, setErr] = useState(null);
 
   const handleNewComment = (event) => {
-    const thisForm = document.getElementById("form");
     setIsPosting(true);
     event.preventDefault();
     const thisComment = {
