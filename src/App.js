@@ -8,6 +8,7 @@ import CategoryPage from "./components/Categories/CategoryPage";
 
 function App() {
   const [reviews, setReviews] = useState("");
+  const [sortBy, setSortBy] = useState("created_at");
 
   return (
     <div className="App">
@@ -15,11 +16,25 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home reviews={reviews} setReviews={setReviews} />}
+          element={
+            <Home
+              reviews={reviews}
+              setReviews={setReviews}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+            />
+          }
         />
         <Route
-          path="/reviews"
-          element={<Home reviews={reviews} setReviews={setReviews} />}
+          path="/reviews?sort_by=:sort"
+          element={
+            <Home
+              reviews={reviews}
+              setReviews={setReviews}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+            />
+          }
         />
         <Route
           path="/reviews/:review_id"
@@ -27,7 +42,14 @@ function App() {
         />
         <Route
           path="/games/:category"
-          element={<CategoryPage reviews={reviews} setReviews={setReviews} />}
+          element={
+            <CategoryPage
+              reviews={reviews}
+              setReviews={setReviews}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+            />
+          }
         />
       </Routes>
     </div>
