@@ -1,12 +1,10 @@
 import axios from "axios";
 
-// const reviews = axios.create({
-//   baseURL: "https://nicos-nc-games.onrender.com/api/reviews",
-// });
-
-export const getAllReviews = () => {
+export const getAllReviews = (sort_by, order) => {
   return axios
-    .get(`https://nicos-nc-games.onrender.com/api/reviews`)
+    .get(
+      `https://nicos-nc-games.onrender.com/api/reviews?sort_by=${sort_by}&&order=${order}`
+    )
     .then((response) => {
       return response.data.reviews;
     });

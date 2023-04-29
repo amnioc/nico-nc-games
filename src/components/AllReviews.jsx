@@ -5,16 +5,24 @@ import { useParams } from "react-router-dom";
 
 const AllReviews = ({ reviews, setReviews }) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const [err, setErr] = useState(null);
+
   const { category } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
-    (category ? getAllReviewsByCategory(category) : getAllReviews()).then(
-      (reviews) => {
+    (!category
+      ? getAllReviews("created_at", "desc")
+      : getAllReviewsByCategory(category)
+    )
+      .then((reviews) => {
         setReviews(reviews);
         setIsLoading(false);
-      }
-    );
+      })
+      .catch((err) => {
+        setErr(err.response.data.msg);
+      });
   }, [category]);
 
   if (isLoading) {
@@ -25,11 +33,10 @@ const AllReviews = ({ reviews, setReviews }) => {
     <ul id="reviewsList">
       {reviews.map((review) => {
         return (
-          <ReviewCards
-            key={review.review_id}
-            review={review}
-            className="reviewCards"
-          />
+          <>
+            {err ? <h4>{err}</h4> : null}
+            <ReviewCards review={review} className="reviewCards" />
+          </>
         );
       })}
     </ul>
