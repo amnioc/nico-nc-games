@@ -16,19 +16,19 @@ const CommentsSection = ({ review_id }) => {
   }, [review_id]);
 
   if (isLoading) {
-    return <h4 id="loadingMessage">Comments Loading...</h4>;
+    return <h4 className="loading-message">Comments Loading...</h4>;
   }
 
   return (
     <>
-      <section className="commentsSection">
+      <section className="comments-section">
         <h3 id="comment-section-heading">Comments...</h3>
         <NewComment
           review_id={review_id}
           setCurrentComments={setCurrentComments}
           currentComments={currentComments}
         />
-        <ul id="commentsList">
+        <ul className="comments-list">
           {currentComments.map((comment) => {
             return <CommentCard key={comment.comment_id} comment={comment} />;
           })}

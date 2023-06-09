@@ -9,7 +9,7 @@ const ReviewCards = ({ review }) => {
   };
 
   return (
-    <li className="review-card" key={review.review_id}>
+    <li className="review-card">
       <h5 className="review-card-date">
         {datePosted} • {review.category.replaceAll("-", " ")} •{" "}
         {review.comment_count} comments

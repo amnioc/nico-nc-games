@@ -6,7 +6,7 @@ const CommentCard = ({ comment }) => {
   const [commentVotes, setCommentVotes] = useState(`${comment.votes}`);
 
   return (
-    <li className="commentCard" key={comment.comment_id}>
+    <li className="comment-card" key={comment.comment_id}>
       <article className="comment-details">
         <img
           alt={comment.author}
@@ -15,10 +15,10 @@ const CommentCard = ({ comment }) => {
         />
 
         <h5>{comment.author}</h5>
-        <h5 id="comment-date">{commentPosted}</h5>
+        <h5 className="comment-date">{commentPosted}</h5>
         <section className="comment-body">
           {" "}
-          <h5 id="comment-text">{comment.body}</h5>
+          <h5 className="comment-text">{comment.body}</h5>
         </section>
         <section className="form-comment-voting">
           <h5>

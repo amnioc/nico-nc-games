@@ -15,7 +15,7 @@ const CategoryMenu = () => {
   }, []);
 
   if (isLoading) {
-    return <h4 id="loadingMessage">Category Menu Loading...</h4>;
+    return <h4 className="loading-message">Category Menu Loading...</h4>;
   }
 
   return (
