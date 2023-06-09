@@ -24,7 +24,7 @@ const SingleReview = () => {
   return (
     <>
       <h2>{thisReview.title}</h2>
-      <article className="fullReviewDetails">
+      <article className="full-review-details">
         <section className="review-overview">
           <img
             alt={`gameplay for ${thisReview.title}`}
@@ -32,12 +32,12 @@ const SingleReview = () => {
           />
           <h3>Written By: {thisReview.owner}</h3>
           <h4>Review Votes: {thisReview.votes}</h4>
-          <time id="postedDate">
+          <time id="posted-date">
             Posted: {new Date(thisReview.created_at).toString()}
           </time>
         </section>
         <section className="review-full-details">
-          <h4 id="reviewBody">"{thisReview.review_body}"</h4>
+          <h4 className="review-body">"{thisReview.review_body}"</h4>
           <details>
             <summary>Did You Know?</summary>
             <h4>{thisReview.designer} designed this game</h4>

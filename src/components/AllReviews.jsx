@@ -30,13 +30,13 @@ const AllReviews = ({ reviews, setReviews }) => {
   }
 
   return (
-    <ul id="reviewsList">
+    <ul className="reviews-list">
       {reviews.map((review) => {
         return (
-          <>
+          <section aria-label="reviews">
             {err ? <h4>{err}</h4> : null}
-            <ReviewCards review={review} className="reviewCards" />
-          </>
+            <ReviewCards review={review} key={review.review_id} />
+          </section>
         );
       })}
     </ul>

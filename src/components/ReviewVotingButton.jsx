@@ -25,7 +25,7 @@ const ReviewVotingButton = ({ review, setReview }) => {
   };
 
   return (
-    <span id="voting">
+    <article>
       Agree with {review.owner}? Add your vote:{" "}
       <button
         aria-label="add a vote"
@@ -35,7 +35,7 @@ const ReviewVotingButton = ({ review, setReview }) => {
         🌈
       </button>
       <aside>{err ? <p>{err}</p> : null}</aside>
-    </span>
+    </article>
   );
 };
 

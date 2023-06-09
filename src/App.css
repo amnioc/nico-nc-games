@@ -29,12 +29,12 @@ img {
   }
 }
 
-#Header {
+.header {
   text-decoration: none;
   color: black;
 }
 
-#loadingMessage {
+.loading-message {
   justify-items: center;
 }
 
@@ -74,8 +74,14 @@ img {
 }
 /* ALL REVIEWS COMPONENT*/
 
+.reviews-list {
+  /* ul */
+  /* display: inline-flex; */
+}
+
+/* each card */
 .review-card {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -115,7 +121,7 @@ img {
 
 /* SINGLE REVIEW VIEW COMPONENT*/
 
-.fullReviewDetails {
+.full-review-details {
   display: flex;
   border: 3px solid green;
   align-content: stretch;
@@ -131,7 +137,7 @@ img {
   flex: 3;
 }
 
-#postedDate {
+#posted-date {
   font-size: 75%;
   font-style: normal;
 }
@@ -149,7 +155,7 @@ img {
 #voting-button {
   font-size: 25px;
 }
-#reviewBody {
+.review-body {
   font-size: 20px;
   font-weight: 25;
   font-style: italic;
@@ -204,7 +210,7 @@ img {
 }
 /* end of new comment*/
 
-.commentsSection {
+.comments-section {
   border: 3px solid purple;
   display: inline-block;
   width: 100%;
@@ -215,7 +221,11 @@ img {
   padding-left: 20px;
   border-bottom: 3px solid purple;
 }
-.commentCard {
+
+.comments-list {
+}
+
+.comment-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: 3px solid red;
@@ -232,7 +242,7 @@ img {
   grid-template-columns: 1fr 1fr;
 }
 
-#comment-date {
+.comment-date {
   grid-column: 1/-1;
 }
 
@@ -249,9 +259,15 @@ img {
   grid-template-rows: 2fr 1fr;
 }
 
-#comment-text {
+.comment-text {
   font-size: 20px;
   font-weight: normal;
+}
+
+.form-comment-voting {
+}
+
+.comment-voting-button {
 }
 
 @media (min-width: 784px) {

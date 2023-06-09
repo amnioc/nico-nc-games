@@ -16,7 +16,7 @@ const CommentVotingButton = ({ comment, setCommentVotes, commentVotes }) => {
       <button
         aria-label="add one glowing star to votes"
         onClick={handleCommentVoteClick}
-        id="comment-voting-button"
+        className="comment-voting-button"
       >
         🌟 Click to add your UpVote! 🌟
       </button>
