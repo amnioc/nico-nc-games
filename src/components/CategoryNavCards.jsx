@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import AllReviews from "./AllReviews";
 
 const CategoryNavCards = ({ category }) => {
   return (
