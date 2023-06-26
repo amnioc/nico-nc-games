@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Welcome to Nico's NC Games! This React app calls to the back-end NC Games API which can be found here: https://github.com/amnioc/nico_nc_games
 
-Nico's NC Games can also be viewed on Netlify: https://nicos-nc-games.onrender.com/
+Nico's NC Games can also be viewed on Netlify: (https://nicos-game-reviews.netlify.app/)
 
 This app provides an interactive user experience to engage with posts, add comments and upvote other content.
 
